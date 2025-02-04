@@ -1,6 +1,6 @@
-const title = 'ZiAI'
+const title = 'Farizio.io'
 const url = 'https://farizio.io'
-const description = 'ZiAI is an AI Avatar by farizio.io'
+const description = 'Interactive Portfolio AI Avatar by farizio.io'
 const author = 'Author'
 const twitter = '@pmndrs'
 

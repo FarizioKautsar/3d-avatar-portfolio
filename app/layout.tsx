@@ -3,7 +3,7 @@ import '@/global.css'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 
 export const metadata = {
-  title: 'ZiAI',
+  title: 'Farizio.ai',
   description: 'AI Avatar by farizio.io',
 }
 
