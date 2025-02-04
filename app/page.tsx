@@ -117,40 +117,42 @@ export default function Page() {
   }
 
   const messagesCount = messages.filter((m) => m.role === 'user').length
-  // const hasReachedMessagesLimit = messagesCount >= MESSAGES_LIMIT
+  const hasReachedMessagesLimit = messagesCount >= MESSAGES_LIMIT
 
   const { register, handleSubmit, setValue } = useForm({
     resolver: yupResolver(questionSchema),
   })
 
   async function askQuestion(question: string, isRetry: boolean = false) {
-    setValue('message', '')
-    const newMessage: ChatBubbleType = isRetry ? messages[messages.length - 1] : { content: question, role: 'user' }
-    const newMessages = [...messages, ...(isRetry ? [] : [newMessage])]
-    try {
-      setIsReplying(true)
-      setMessages((prev) => [...prev, ...(isRetry ? [] : [newMessage])])
-      handleScrollToDelayedBottom()
-      const res = await callOpenAi({
-        messages: newMessages.map((m) => ({
-          role: m.role,
-          content: m.content,
-        })),
-      })
-      if (res.data?.message) {
-        setMessages((prev) => {
-          const newMsgs = [...prev, res.data.message]
-          return newMsgs as ChatBubbleType[]
+    if (hasReachedMessagesLimit) {
+      setValue('message', '')
+      const newMessage: ChatBubbleType = isRetry ? messages[messages.length - 1] : { content: question, role: 'user' }
+      const newMessages = [...messages, ...(isRetry ? [] : [newMessage])]
+      try {
+        setIsReplying(true)
+        setMessages((prev) => [...prev, ...(isRetry ? [] : [newMessage])])
+        handleScrollToDelayedBottom()
+        const res = await callOpenAi({
+          messages: newMessages.map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
         })
-        handleSynthesize(res.data.message.content)
+        if (res.data?.message) {
+          setMessages((prev) => {
+            const newMsgs = [...prev, res.data.message]
+            return newMsgs as ChatBubbleType[]
+          })
+          handleSynthesize(res.data.message.content)
+        }
+        handleScrollToDelayedBottom()
+      } catch (e: any) {
+        setAssistantError(new Error(e.message))
+        console.error('Error asking question:', e)
+        handleScrollToDelayedBottom()
+      } finally {
+        setIsReplying(false)
       }
-      handleScrollToDelayedBottom()
-    } catch (e: any) {
-      setAssistantError(new Error(e.message))
-      console.error('Error asking question:', e)
-      handleScrollToDelayedBottom()
-    } finally {
-      setIsReplying(false)
     }
     // if (!hasReachedMessagesLimit) {
     // } else {
@@ -495,7 +497,7 @@ export default function Page() {
                             className='size-12'
                             rounded
                             type='submit'
-                            disabled={Boolean(isLoading || assistantError)}
+                            disabled={Boolean(isLoading || assistantError || hasReachedMessagesLimit)}
                           >
                             <IoMdSend />
                           </Button>
