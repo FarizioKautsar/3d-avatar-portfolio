@@ -14,11 +14,11 @@ export default function Button({
     <button
       className={classNames(
         'transition-all duration-100',
-        'bg-slate-200 hover:bg-slate-300 active:bg-slate-700',
-        'dark:bg-slate-600 dark:hover:bg-slate-800 dark:active:bg-slate-900 dark:text-white',
+        'bg-blue-200 hover:bg-blue-300 active:bg-blue-700',
+        'dark:bg-blue-600 dark:hover:bg-blue-800 dark:active:bg-blue-900 dark:text-white',
         'cursor-pointer rounded disabled:cursor-not-allowed disabled:text-gray-400',
         rounded && 'rounded-full',
-        'disabled:bg-slate-800',
+        'disabled:bg-blue-800',
         'px-4 py-2 flex items-center min-w-12',
         className,
       )}

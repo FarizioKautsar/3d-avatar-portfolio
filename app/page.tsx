@@ -480,11 +480,11 @@ export default function Page() {
                           className={classNames(
                             'bg-gray-50 border border-gray-300 w-full',
                             'text-gray-900 text-sm rounded-lg',
-                            'focus:ring-slate-500 focus:border-slate-500',
+                            'focus:ring-blue-500 focus:border-blue-500',
                             'flex-1 p-2.5 dark:bg-gray-900',
                             'dark:border-gray-600 dark:placeholder-gray-400',
-                            'dark:text-white dark:focus:ring-slate-500',
-                            'dark:focus:border-slate-500',
+                            'dark:text-white dark:focus:ring-blue-500',
+                            'dark:focus:border-blue-500',
                           )}
                           onFocus={() => setInputFocused(true)}
                         />
@@ -530,11 +530,9 @@ export default function Page() {
                   </div>
                 </>
               ) : (
-                <div className='flex h-full flex-col items-center justify-center'>
-                  <h1 className='mb-3 text-center text-3xl font-bold dark:text-white'>
-                    Meet ZiAI, your very own AI assistant
-                  </h1>
-                  <Button onClick={() => setHasStarted(true)}>Start</Button>
+                <div className='flex h-full flex-col items-center justify-center gap-3'>
+                  <h1 className='text-center text-3xl font-bold dark:text-white'>Hi! I'm Zi, your IT guy!</h1>
+                  <Button onClick={() => setHasStarted(true)}>Start Experience</Button>
                 </div>
               )}
             </div>

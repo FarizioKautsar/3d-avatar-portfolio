@@ -18,7 +18,7 @@ export const Common: React.FC<CommonProps> = ({ color, fov = 40 }) => {
       <ambientLight intensity={0.3} />
       <pointLight position={[5, 0, 30]} intensity={70} decay={1} />
       <pointLight position={[-30, 30, -30]} decay={100} intensity={10} />
-      <pointLight position={[30, 10, -30]} color='#F8FAFC' decay={0.2} intensity={5} />
+      <pointLight position={[30, 10, -30]} color='#60A5FA' decay={0.2} intensity={5} />
       <pointLight position={[-30, -10, -30]} color='#E2E8F0' decay={0.2} intensity={3} />
       {/* <pointLight position={[10, -10, 0]} color='cyan' decay={0.2} intensity={3} /> */}
       <PerspectiveCamera makeDefault fov={fov} position={[0, 0, 6]} />

@@ -188,7 +188,7 @@ const AudioRecorder = ({
     <div className='flex flex-col items-center'>
       <button
         onClick={isRecording ? stopRecording : startRecording}
-        className={`flex items-center justify-center rounded-full text-white transition-all ${isRecording ? 'size-24 bg-red-500 hover:bg-red-600' : 'size-12 bg-slate-500 hover:bg-slate-600'}`}
+        className={`flex items-center justify-center rounded-full text-white transition-all ${isRecording ? 'size-24 bg-red-500 hover:bg-red-600' : 'size-12 bg-blue-500 hover:bg-blue-600'}`}
         style={{
           boxShadow: isRecording ? `0 0 ${Math.min(volume, 30)}px rgba(255, 0, 0, 0.8)` : 'none',
         }}
