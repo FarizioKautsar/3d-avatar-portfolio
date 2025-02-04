@@ -93,9 +93,6 @@ export default function Page() {
       // Get audio
       const url = await synthesizeSpeech(message, gender)
       setAudioUrl(url)
-
-      console.log(url)
-      console.log(JSON.stringify(marks))
     } catch (error) {
       setTranscribingError(new Error(error.message))
       console.error('Error synthesizing speech:', error)
@@ -371,7 +368,7 @@ export default function Page() {
               </a>
             </div>
             <div className='absolute left-4 top-4 z-50 md:bottom-4 md:left-auto md:right-4 md:top-auto'>
-              <Button className='size-16' disabled={isPlaying || isLoading} rounded onClick={toggleDarkMode}>
+              <Button className='size-16' rounded onClick={toggleDarkMode}>
                 {darkMode ? <MdOutlineLightMode size={36} /> : <MdOutlineDarkMode size={36} />}
               </Button>
             </div>
