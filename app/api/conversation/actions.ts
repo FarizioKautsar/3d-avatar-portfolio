@@ -37,7 +37,7 @@ export const callOpenAi = actionClient
         {
           role: 'user',
           content:
-            'Answer my question in at most 200 words. If I asked for anything else other than my CV or portfolio, please kindly reject to answer.',
+            'Answer my question in at most 200 words. If I asked for anything else other than me, my CV, or portfolio, please kindly reject to answer.',
         },
         ...parsedMessages,
       ]

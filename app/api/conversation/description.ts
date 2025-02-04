@@ -1,4 +1,4 @@
-const description = `My name is Farizio Kautsar Heruzy. People call me Zi or Zio. I'm a web developer based in Melbourne, Australia. Here's my CV.
+const description = `My name is Farizio Kautsar Heruzy. People call me Zi or Zio. I'm a web developer based in Melbourne, Australia. Originally from Jakarta, Indonesia. Here's my CV.
           Farizio Kautsar Heruzy
 Full Stack Developer
 Master of Information Technology | Student

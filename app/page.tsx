@@ -124,7 +124,7 @@ export default function Page() {
   })
 
   async function askQuestion(question: string, isRetry: boolean = false) {
-    if (hasReachedMessagesLimit) {
+    if (!hasReachedMessagesLimit) {
       setValue('message', '')
       const newMessage: ChatBubbleType = isRetry ? messages[messages.length - 1] : { content: question, role: 'user' }
       const newMessages = [...messages, ...(isRetry ? [] : [newMessage])]
@@ -531,7 +531,7 @@ export default function Page() {
                 </>
               ) : (
                 <div className='flex h-full flex-col items-center justify-center gap-3'>
-                  <h1 className='text-center text-3xl font-bold dark:text-white'>Hi! I'm Zi, your IT guy!</h1>
+                  <h1 className='text-center text-3xl font-bold dark:text-white'>Hi! I&apos;m Zi, your IT guy!</h1>
                   <Button onClick={() => setHasStarted(true)}>Start Experience</Button>
                 </div>
               )}
