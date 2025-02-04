@@ -359,9 +359,14 @@ export default function Page() {
         </View>
         {hasLoaded ? (
           <>
-            <div className='absolute right-4 top-4 z-50'>
-              <p className='-mb-3 text-right text-white'>Made with ❤️ by</p>
-              <a href='https://farizio.io' target='_blank' rel='noreferrer' className='text-2xl font-bold text-white'>
+            <div className='absolute right-4 top-4 z-50 text-right'>
+              <p className='dark:text-white'>Made with ❤️ by</p>
+              <a
+                href='https://farizio.io'
+                target='_blank'
+                rel='noreferrer'
+                className='text-2xl font-bold dark:text-white'
+              >
                 Farizio.io
               </a>
             </div>
@@ -527,7 +532,7 @@ export default function Page() {
                 </>
               ) : (
                 <div className='flex h-full flex-col items-center justify-center'>
-                  <h1 className='mb-3 text-center text-3xl font-bold text-white'>
+                  <h1 className='mb-3 text-center text-3xl font-bold dark:text-white'>
                     Meet ZiAI, your very own AI assistant
                   </h1>
                   <Button onClick={() => setHasStarted(true)}>Start</Button>
