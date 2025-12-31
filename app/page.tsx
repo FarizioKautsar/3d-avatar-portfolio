@@ -361,12 +361,12 @@ export default function Page() {
             <div className='absolute right-4 top-4 z-50 text-right'>
               <p className='dark:text-white'>Made with ❤️ by</p>
               <a
-                href='https://farizio.io'
+                href='https://farizio.dev'
                 target='_blank'
                 rel='noreferrer'
                 className='text-2xl font-bold dark:text-white'
               >
-                Farizio.io
+                Farizio.dev
               </a>
             </div>
             <div className='absolute left-4 top-4 z-50 md:bottom-4 md:left-auto md:right-4 md:top-auto'>
