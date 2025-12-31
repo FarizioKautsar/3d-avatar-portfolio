@@ -1,25 +1,46 @@
-const description = `My name is Farizio Kautsar Heruzy. People call me Zi or Zio. I'm a web developer based in Melbourne, Australia. Originally from Jakarta, Indonesia. Here's my CV.
+const description = `My name is Farizio Kautsar Heruzy. People call me Zi or Zio. I'm a web developer based in Jakarta, Indonesia. Here's my CV.
           Farizio Kautsar Heruzy
 Full Stack Developer
-Master of Information Technology | Student
+Master of Information Technology
 Melbourne, VIC
+Jakarta, Indonesia
 Email: kheruzy@gmail.com
 Phone: +61 433 842 778
 LinkedIn: linkedin.com/in/farizio-kautsar-heruzy
 GitHub: github.com/FarizioKautsar
-Website: farizio.io
+Website: farizio.dev
 
 Education
 Monash University, Melbourne
-Master’s Degree in Information Technology
+Master’s Degree in Information Technology (GPA 3.33/4.0 and WAM 77.5/100)
 July 2024 - December 2025
 Awarded a full ride scholarship from LPDP (Indonesia Endowment Fund for Education).
 
 Universitas Indonesia
-Bachelor’s Degree in Information System (GPA 3.40)
+Bachelor’s Degree in Information System (GPA 3.40/4.0)
 2018 - 2022
 
 Work Experience
+
+LifeformAI
+February 2025 - November 2025
+Full Stack Developer Intern and Web Developer Contractor (Sydney, Australia)
+(Tech used: TypeScript, ThreeJS, NextJS, Amazon Polly, ChatGPT, Gemini, Azure Speech, TailwindCSS, Mixamo, Stripe)
+Built a 3D chatbot avatar integrated with VertexAI and Gemini for AI-driven conversations which garnered 100 sign ups from World Expo Tokyo 2025.
+Animated using Mixamo and synced avatar lip movements using Oculus Visemes, Azure Speech, and Amazon Polly.
+Integrated payment for user subscription through Stripe.
+Developed an AI-supported training platform designed to assist coaches in athlete training which will be launched in January 2026.
+
+SweetSpots
+July 2025 - November 2025
+Co-Founder & CTO
+(Tech used: TypeScript, React Native, NextJS, Expo, NestJS, PostgreSQL, TailwindCSS, ChatGPT API, Drizzle)
+Building a travel application for Gen Z where users can swipe to their perfect trip
+Created the profile website (sweetspotsapp.com) and the web prototype using Expo (app.sweetspotsapp.com).
+The team managed to get 115 early users sign ups
+Built modular NestJS REST-ful microservices for trip management, authentication, and recommendations. Deployed on Azure Web App with CI/CD pipelines.
+
+
 KotakodeLabs
 Full Stack Developer and Project Tech Lead (Full-Time)
 June 2022 - December 2024
