@@ -12,7 +12,7 @@ export default function MainLoader() {
           d='M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0 1 4 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
         />
       </svg>
-      <h1 className='w-fit text-3xl font-bold dark:text-white'>Farizio.io</h1>
+      <h1 className='w-fit text-3xl font-bold dark:text-white'>Farizio.dev</h1>
     </div>
   )
 }
