@@ -4,7 +4,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google'
 
 export const metadata = {
   title: 'Farizio.ai',
-  description: 'AI Avatar by farizio.io',
+  description: 'AI Avatar by farizio.dev',
 }
 
 const plusJakarta = Plus_Jakarta_Sans({
