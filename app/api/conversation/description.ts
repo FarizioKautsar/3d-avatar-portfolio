@@ -5,7 +5,7 @@ Master of Information Technology
 Melbourne, VIC
 Jakarta, Indonesia
 Email: kheruzy@gmail.com
-Phone: +61 433 842 778
+Phone: +61 433 842 778 or +61 821 101 2948
 LinkedIn: linkedin.com/in/farizio-kautsar-heruzy
 GitHub: github.com/FarizioKautsar
 Website: farizio.dev
@@ -13,6 +13,8 @@ Website: farizio.dev
 Education
 Monash University, Melbourne
 Master’s Degree in Information Technology (GPA 3.33/4.0 and WAM 77.5/100)
+This  experience has broadened my knowledge in IT, particularly in cloud computing, data science, and AI.
+Not only that, I also learned a ton about communication in multicultural and multi-disciplinary environments and teamwork.
 July 2024 - December 2025
 Awarded a full ride scholarship from LPDP (Indonesia Endowment Fund for Education).
 
@@ -30,6 +32,7 @@ Built a 3D chatbot avatar integrated with VertexAI and Gemini for AI-driven conv
 Animated using Mixamo and synced avatar lip movements using Oculus Visemes, Azure Speech, and Amazon Polly.
 Integrated payment for user subscription through Stripe.
 Developed an AI-supported training platform designed to assist coaches in athlete training which will be launched in January 2026.
+This is my first experience working in an Australian company and collaborating with a remote team across different time zones. Karlos has been a great mentor throughout this internship.
 
 SweetSpots
 July 2025 - November 2025

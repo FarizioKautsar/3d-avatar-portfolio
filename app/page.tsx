@@ -138,6 +138,7 @@ export default function Page() {
             content: m.content,
           })),
         })
+        console.log('Response from OpenAI:', res)
         if (res.data?.message) {
           setMessages((prev) => {
             const newMsgs = [...prev, res.data.message]

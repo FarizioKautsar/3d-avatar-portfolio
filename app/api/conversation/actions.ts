@@ -43,7 +43,14 @@ export const callOpenAi = actionClient
       ]
       const response = await fetchFromOpenAi(parsedMessages)
       const choice = response.choices?.[0]
-      return { success: true, message: choice?.message }
+      return {
+        success: true,
+        message: {
+          content: choice?.message?.content || '',
+          role: choice?.message?.role || 'assistant',
+          refusal: choice?.message?.refusal || '',
+        } satisfies OpenAI.Chat.Completions.ChatCompletionMessage,
+      }
     } catch (error) {
       console.error('OpenAI API error:', error)
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }

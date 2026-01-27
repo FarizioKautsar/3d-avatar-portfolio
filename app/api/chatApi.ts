@@ -14,6 +14,7 @@ export async function fetchFromOpenAi(
       messages,
       temperature: 0.6,
     });
+    console.log("OpenAI Completion: RETURNING", completion);
     return completion;
   } catch (error: unknown) {
     if (error instanceof Error) {
