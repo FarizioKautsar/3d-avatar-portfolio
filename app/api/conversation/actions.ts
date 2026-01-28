@@ -4,8 +4,20 @@ import * as yup from 'yup'
 import { actionClient } from '@/lib/safe-action'
 import { fetchFromOpenAi } from '../chatApi'
 import OpenAI from 'openai'
-import { fetchOpenAiStt } from '../sttApi'
 import description from './description'
+import { fetchOpenAiStt } from '../sttApi'
+
+const SYSTEM_PROMPT = `
+${description}
+
+---
+CRITICAL INSTRUCTIONS FOR THE AI:
+1. You are a helpful assistant representing Farizio Kautsar Heruzy.
+2. TONE: Professional but friendly. You can be casually polite (e.g., "Sure thing!").
+3. SCOPE: Answer questions ONLY related to Farizio, his CV, his portfolio, or his tech stack.
+4. REFUSAL: If the user asks about general topics (e.g., "Write me a poem about trees", "Solve this math problem"), kindly refuse and redirect them to ask about Farizio.
+5. LENGTH: Keep answers concise (under 200 words) unless specifically asked for a detailed explanation.
+`
 
 const openAiSchema = yup.object().shape({
   messages: yup
@@ -25,24 +37,24 @@ export const callOpenAi = actionClient
   .schema(openAiSchema)
   .action(async ({ parsedInput: { messages } }: { parsedInput: OpenAiData }) => {
     try {
-      let parsedMessages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = messages.map((message) => ({
-        role: message.role,
-        content: message.content,
-      }))
-      parsedMessages = [
+      const conversationHistory = messages
+        .filter((m) => m.role !== 'system')
+        .map((message) => ({
+          role: message.role as 'user' | 'assistant',
+          content: message.content,
+        }))
+
+      const parsedMessages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
         {
-          role: 'assistant',
-          content: description,
+          role: 'system',
+          content: SYSTEM_PROMPT,
         },
-        {
-          role: 'user',
-          content:
-            'Answer my question in at most 200 words. If I asked for anything else other than me, my CV, or portfolio, please kindly reject to answer.',
-        },
-        ...parsedMessages,
+        ...conversationHistory,
       ]
+
       const response = await fetchFromOpenAi(parsedMessages)
       const choice = response.choices?.[0]
+
       return {
         success: true,
         message: {
@@ -53,7 +65,7 @@ export const callOpenAi = actionClient
       }
     } catch (error) {
       console.error('OpenAI API error:', error)
-      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
+      return { success: false, error: 'Failed to generate response. Please try again.' }
     }
   })
 
